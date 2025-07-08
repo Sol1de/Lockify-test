@@ -62,8 +62,8 @@ npm run test-api
 
 ### 📝 Inscription d'un utilisateur
 ```bash
-curl -X POST http://localhost:3000/register \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/register
+  -H "Content-Type: application/json"
   -d '{
         "email":"test@example.com",
         "password":"MyPassword123!"
@@ -82,8 +82,8 @@ curl -X POST http://localhost:3000/register \
 
 ### 🔑 Connexion
 ```bash
-curl -X POST http://localhost:3000/login \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/login
+  -H "Content-Type: application/json"
   -d '{
         "email":"test@example.com",
         "password":"MyPassword123!"
@@ -105,14 +105,14 @@ curl -X POST http://localhost:3000/login \
 
 ### 🛡️ Route protégée (remplacez YOUR_TOKEN)
 ```bash
-curl -X GET http://localhost:3000/profile \
+curl -X GET http://localhost:3000/profile
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### 🔍 Vérification de token
 ```bash
-curl -X POST http://localhost:3000/verify-token \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/verify-token
+  -H "Content-Type: application/json"
   -d '{
         "token":"YOUR_TOKEN"
       }'
@@ -207,7 +207,7 @@ lockify-test/
 ---
 
 🎉 **Happy testing with Lockify!**
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json"
   -d '{
         "email":"test@example.com",
         "password":"MyPassword123!"
@@ -216,8 +216,8 @@ lockify-test/
 
 ### Connexion
 ```bash
-curl -X POST http://localhost:3000/login \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/login
+  -H "Content-Type: application/json"
   -d '{
         "email":"test@example.com",
         "password":"MyPassword123!"
@@ -226,14 +226,14 @@ curl -X POST http://localhost:3000/login \
 
 ### Route protégée (remplacez YOUR_TOKEN par le token reçu)
 ```bash
-curl -X GET http://localhost:3000/profile \
+curl -X GET http://localhost:3000/profile
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### Vérification de token
 ```bash
-curl -X POST http://localhost:3000/verify-token \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/verify-token
+  -H "Content-Type: application/json"
   -d '{"token":"YOUR_TOKEN"}'
 ```
 
