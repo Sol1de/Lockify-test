@@ -1,142 +1,59 @@
 # 🔐 Lockify Test Server
 
-Lockify Test Server est une API simple pour tester les fonctionnalités d'authentification avec Express.js.
+Lockify Test Server is a simple API for testing authentication features with Express.js.
 
-## 🚀 Installation et démarrage
+## 🚀 Installation and startup
 
-1. **Installer les dépendances :**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
-2. **Lancer le serveur :**
+2. **Start the server:**
    ```bash
    npm start
    ```
-   Le serveur démarre sur [http://localhost:3000](http://localhost:3000).
+   The server starts on [http://localhost:3000](http://localhost:3000).
 
 ## 📋 API Endpoints
 
-- **GET /** : Documentation de l'API
-- **POST /register** : Inscription
-- **POST /login** : Connexion
-- **GET /profile** : Accès profil (nécessite un token)
-- **POST /verify-token** : Vérification manuel de token
-- **GET /users** : Voir les utilisateurs (debug)
-- **DELETE /users/:id** : Supprimer un utilisateur par ID
-- **DELETE /users/email/:email** : Supprimer par email
-- **DELETE /users** : Supprimer TOUS les utilisateurs ⚠️
+- **GET /** : API documentation
+- **POST /register** : User registration
+- **POST /login** : User login
+- **GET /profile** : Profile access (requires token)
+- **POST /verify-token** : Manual token verification
+- **GET /users** : View all users (debug)
+- **DELETE /users/:id** : Delete user by ID
+- **DELETE /users/email/:email** : Delete user by email
+- **DELETE /users** : Delete ALL users ⚠️
 
-## 🛠 Utilisation
+## 🛠 Usage
 
-### Inscription
+### Registration
 ```bash
 curl -X POST http://localhost:3000/register \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","password":"MyPassword123!"}'
 ```
 
-### Connexion
+### Login
 ```bash
 curl -X POST http://localhost:3000/login \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","password":"MyPassword123!"}'
 ```
 
-### Accès au profil
+### Profile access
 ```bash
 curl -X GET http://localhost:3000/profile \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
-## 📂 Structure du projet
+## 📂 Project structure
 
-- `app.ts`: Serveur principal
-- `users.json`: Stockage des utilisateurs
-- `package.json`: Configuration npm
-
----
-
-🎉 **Bon test avec Lockify !**
-🗑️ Delete attempt for user ID: 1
-💾 Users saved to disk
-✅ User test@example.com (ID: 1) deleted successfully
-```
+- `app.ts`: Main server
+- `users.json`: User storage
+- `package.json`: npm configuration
 
 ---
 
 🎉 **Happy testing with Lockify!**
-  -H "Content-Type: application/json"
-  -d '{
-        "email":"test@example.com",
-        "password":"MyPassword123!"
-    }'
-```
-
-### Connexion
-```bash
-curl -X POST http://localhost:3000/login
-  -H "Content-Type: application/json"
-  -d '{
-        "email":"test@example.com",
-        "password":"MyPassword123!"
-      }'
-```
-
-### Route protégée (remplacez YOUR_TOKEN par le token reçu)
-```bash
-curl -X GET http://localhost:3000/profile
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
-
-### Vérification de token
-```bash
-curl -X POST http://localhost:3000/verify-token
-  -H "Content-Type: application/json"
-  -d '{"token":"YOUR_TOKEN"}'
-```
-
-## 📋 Ce qui est testé
-
-- **Hachage de mots de passe** avec bcrypt  
-- **Comparaison de mots de passe** sécurisée  
-- **Génération de tokens JWT** avec options  
-- **Vérification de tokens JWT**  
-- **Middleware d'authentification** Express  
-- **Gestion d'erreurs** appropriée  
-- **Protection des routes** sans token  
-
-## 🎯 Fonctionnalités Lockify testées
-
-- `hashPassword()` - Hachage sécurisé
-- `comparePassword()` - Vérification de mot de passe
-- `generateToken()` - Génération JWT avec expiration
-- `verifyToken()` - Validation de token
-- `requireAuth()` - Middleware de protection
-
-## 📊 Résultats attendus
-
-Tous les tests devraient passer si Lockify fonctionne correctement :
-- Documentation accessible
-- Inscription d'utilisateur réussie
-- Connexion avec token généré
-- Accès autorisé aux routes protégées
-- Vérification de token valide
-- Accès refusé sans token
-
-## 🔧 Structure du projet
-
-```
-lockify-test/
-├── app.ts          # Serveur Express de test
-├── test-api.ts          # Tests automatisés
-├── package.json         # Configuration npm
-├── tsconfig.json        # Configuration TypeScript
-└── README.md           # Cette documentation
-```
-
-## 💡 Notes importantes
-
-- Le serveur utilise une base de données en mémoire (Map)
-- Les données sont perdues à chaque redémarrage
-- Le JWT secret est codé en dur pour les tests
-- En production, utilisez des variables d'environnement sécurisées
