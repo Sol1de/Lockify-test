@@ -5,7 +5,7 @@ Serveur de test pour le package **Lockify** - Une API complète d'authentificati
 ## ✨ Fonctionnalités
 
 - **Authentification complète** : Inscription, connexion, vérification de token
-- **Gestion des utilisateurs** : CRUD complet (Create, Read, Delete)
+- **Gestion des utilisateurs** : CRUD partiel (Create, Read, Delete)
 - **Persistance des données** : Sauvegarde automatique dans `users.json`
 - **Configuration CORS** : Compatible avec Hoppscotch, Postman, etc.
 - **Sécurité** : Hachage bcrypt, JWT, routes protégées
