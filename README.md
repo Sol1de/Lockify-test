@@ -24,7 +24,7 @@ Lockify Test Server is a simple API for testing authentication features with Exp
 - **GET /users** : View all users (debug)
 - **DELETE /users/:id** : Delete user by ID
 - **DELETE /users/email/:email** : Delete user by email
-- **DELETE /users** : Delete ALL users ⚠️
+- **DELETE /users** : Delete all users
 
 ## 🛠 Usage
 
