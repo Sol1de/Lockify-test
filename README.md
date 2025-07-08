@@ -53,5 +53,3 @@ curl -X GET http://localhost:3000/profile \
 - `app.ts`: Main server
 - `users.json`: User storage
 - `package.json`: npm configuration
-
----
